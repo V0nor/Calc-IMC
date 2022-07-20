@@ -13,6 +13,7 @@ const resultadoPesoIdeal = document.querySelector('.resultado__ideal');
 const header = document.querySelector('.header');
 const avisoContainer = document.querySelector('.aviso__container');
 const avisoBtnFechar = document.querySelector('.aviso__btn');
+
 function calcularIMC() {
   window.scroll(900, 0);
   header.classList.add('ativo');
@@ -27,27 +28,28 @@ function calcularIMC() {
   resultadoGeneroEscolhido.innerHTML = `<span>GÊNERO: </span>${generoEscolhido}`;
 
   if (calculoIMC < 18.5) {
-    resultadoGrauDoPeso.innerHTML = `<span>GRAU: </span>ABAIXO DO PESO`;
+    resultadoGrauDoPeso.innerHTML = '<span>GRAU: </span>ABAIXO DO PESO';
   } else if (calculoIMC >= 18.5 && calculoIMC <= 24.9) {
-    resultadoGrauDoPeso.innerHTML = `<span>GRAU: </span>NORMAL`;
+    resultadoGrauDoPeso.innerHTML = '<span>GRAU: </span>NORMAL';
   } else if (calculoIMC >= 25.0 && calculoIMC <= 29.9) {
-    resultadoGrauDoPeso.innerHTML = `<span>GRAU: </span>SOBREPESO`;
+    resultadoGrauDoPeso.innerHTML = '<span>GRAU: </span>SOBREPESO';
   } else if (calculoIMC >= 30.0 && calculoIMC <= 34.9) {
-    resultadoGrauDoPeso.innerHTML = `<span>GRAU: </span>OBESIDADE GRAU I`;
+    resultadoGrauDoPeso.innerHTML = '<span>GRAU: </span>OBESIDADE GRAU I';
   } else if (calculoIMC >= 35.0 && calculoIMC <= 39.9) {
-    resultadoGrauDoPeso.innerHTML = `<span>GRAU: </span>OBESIDADE GRAU II`;
+    resultadoGrauDoPeso.innerHTML = '<span>GRAU: </span>OBESIDADE GRAU II';
   } else if (calculoIMC > 40.0) {
-    resultadoGrauDoPeso.innerHTML = `<span>GRAU: </span>OBESIDADE GRAU III`;
+    resultadoGrauDoPeso.innerHTML = '<span>GRAU: </span>OBESIDADE GRAU III';
   }
   const alturaTotal = parseFloat(altura * altura).toFixed(2);
-  const calculoPesoIdeal = parseFloat(21 * alturaTotal).toFixed(2);
-  if (!generoFeminino.checked) {
+
+  calculoPesoIdeal = parseFloat(21 * alturaTotal).toFixed(2);
+  if (generoFeminino.checked) {
     alturaTotal;
     calculoPesoIdeal;
     resultadoPesoIdeal.innerHTML = `<span>PESO IDEAL: </span>${calculoPesoIdeal} KG`;
   } else {
     alturaTotal;
-    calculoPesoIdeal;
+    calculoPesoIdeal = parseFloat(22.5 * alturaTotal).toFixed(2);
     resultadoPesoIdeal.innerHTML = `<span>PESO IDEAL: </span>${calculoPesoIdeal} KG`;
   }
 }
