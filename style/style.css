@@ -71,17 +71,29 @@ a {
     transform: scale(1.05);
 }
 
+.radio__masculino {
+    background-image: url(/imgs/gender-male-svgrepo-com.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.radio__feminino {
+    background-image: url(/imgs/female-symbol-svgrepo-com.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 .radio__masculino:checked {
-    fill: red;
+    background-image: url(/imgs/masculine.svg);
     border-color: #7214c9;
     box-shadow: 0 20.5px 25px -18.5px #7214c9;
-    transform: scale(1.05);
+    transform: scale(1.05) translateY(5px);
 }
 
 .radio__feminino:checked {
+    background-image: url(/imgs/female.svg);
     border-color: #7214c9;
     box-shadow: 0 20.5px 25px -18.5px #7214c9;
-    transform: scale(1.05);
+    transform: scale(1.05) translateY(5px);
 }
 
 .imc {
@@ -131,7 +143,7 @@ a {
     border: 3px solid #c4bbbb63;
     border-radius: 10px;
     outline: 0;
-    transition: all 0.5s ease-out;
+    transition: all 0.4s;
 }
 
 .imc__input:focus,
@@ -172,11 +184,6 @@ a {
 
 .imc__btn:hover {
     transform: scale(0.98);
-}
-
-.imc__btn:disabled {
-    opacity: 0.5;
-    transform: scale(1);
 }
 
 .resultado {
